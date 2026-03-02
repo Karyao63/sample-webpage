@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        body {
+            transition: background-color 0.3s ease;
+        }
+
+        .bg {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px;
+        }
+        button {
+            margin: 20px 0px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 <head>
-<title>My First Cloud Web Page</title>
+    <title >My First Cloud Web Page</title>
 </head>
 <body>
-<h1>My First Cloud Web Page</h1>
-<p>Welcome to my web page hosted on the cloud!</p>
-<img src="https://via.placeholder.com/150" alt="Sample Image">
-<a href="https://www.google.com" target="_blank">Visit Google</a>
+    <div class="bg">
+    <h1>My First Cloud Web Page</h1>
+    <p>Welcome to my web page hosted on the cloud!</p>
+    <img src="https://www.shutterstock.com/shutterstock/photos/2550093485/display_1500/stock-photo-a-trash-can-is-in-the-middle-of-the-street-contains-trash-and-is-on-fire-2550093485.jpg" alt="Sample Image" width="500px" height="500px"><br>
+    <a href="https://www.google.com" target="_blank">Visit Google</a><br>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Visit Youtube</a><br>
+    <button id="btn">click me</button>
+    </div>
 </body>
+<script>
+    const btn = document.getElementById("btn");
+    const title = document.querySelector("h1");
+
+    btn.addEventListener("click", function() {
+    
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    let t = Math.floor(Math.random() * 256);
+    let a = Math.floor(Math.random() * 256);
+    let s = Math.floor(Math.random() * 256);
+
+    const newColor = `rgb(${r}, ${g}, ${b})`;
+    const bodyColor = `rgb(${t}, ${a}, ${s})`;
+    
+    document.body.style.backgroundColor = bodyColor;
+    title.style.color = newColor;
+    });
+</script>
 </html>
